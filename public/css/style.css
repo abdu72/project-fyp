@@ -1,0 +1,281 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    background: #001f3f;
+    color: #0b0b0b;
+    padding: 8px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    margin-left: 15px;
+    width: 60px; /* Sesuaikan ukuran sesuai kebutuhan */
+    height: 60px;
+    color: #fff;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 40px;
+    margin-top: 18px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+
+.menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.menu li a:hover {
+    background-color: #d8d7d9;
+}
+
+/*.login {
+    display: flex;
+    align-items: center;
+}*/
+
+.title-section {
+    padding: 70px 0;
+    background-color: #ffffff;
+    background-image: url("/images/landing2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.title-content {
+    margin-right: 40px;
+}
+
+.title {
+    font-size: 31px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.random-image {
+    width: 450px;
+    height: 400px;
+    margin-left: 38px;
+}
+
+.bg-funtion {
+    background-color: #457b9d;
+}
+
+.function-section {
+    padding: 80px 0;
+    background-color: #f1efe8;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.col-md-4 {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+    padding: 0 15px;
+}
+
+.function-item {
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 0px;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    height: 220px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.function-item:hover {
+    transform: translateY(-5px);
+}
+
+.function-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.function-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.function-description {
+    font-size: 16px;
+    color: #888;
+}
+
+.btn-lgn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d2601a;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.btn-lgn:hover {
+    background-color: #b55316;
+}
+
+.btn-signup {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d2601a;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.btn-signup:hover {
+    background-color: #b55316;
+}
+
+/* dropdown */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+}
+.dropdown-content a:hover {
+    color: #ffffff;
+    background-color: #00a4bd;
+}
+
+.btn btn-outline-info:hover {
+    color: #ffffff;
+    background-color: #00a4bd;
+}
+.btn btn-outline-info {
+    text-align: center;
+    margin-left: 10%;
+}
+
+/* footer */
+
+.footer {
+    background-color: #373535;
+    padding: 40px 0;
+}
+
+.footer h3 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.kontak {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 26px;
+}
+
+.footer p {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin-left: 26px;
+}
+
+.contact-list li {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.contact-list i {
+    margin-right: 10px;
+}
+.divider {
+    border-top: 2px solid #fff;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,371 @@
+.navbar {
+    background-color: #fff1e1;
+    color: black;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar__container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar__back-icon {
+    color: black;
+    margin-right: 10px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .navbar__title {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  /* Optional: Add FontAwesome CSS CDN for the back icon */
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .radio-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-family: 'cambria';
+  }
+  
+  .radio-button input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .radio-custom {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin-right: 10px;
+    position: relative;
+  }
+  
+  .radio-button input[type="radio"]:checked ~ .radio-custom::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Optional: Customize the font style */
+  body {
+    
+    background-color: #fff;
+  }
+  .detail2 {
+    
+    background-image: url('/images/result.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700px;
+  }
+  
+  /* radio button sampai sini */
+
+  .expln{
+    color: #7d7c7c;
+    font-size: 10px;
+    font-style: italic;
+  }
+
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  h6 {
+    text-align: center;
+    font-size: 25px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+
+  .btn-next {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 30px;
+  }
+  
+  .btn-next:hover {
+    background-color: darkblue;
+  }
+  
+  .btn-next:focus {
+    outline: none;
+  }
+  
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea,
+    select {
+      font-size: 14px;
+    }
+  
+    .btn {
+        background-color: #d2601a;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        width: 100%;
+        transition: background-color 0.3s;
+      }
+      
+      .btn:hover {
+        background-color: #b55316;
+      }
+    }
+
+
+    /* chech box */
+    
+    .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        font-family: 'cambria';
+      }
+      
+      .checkbox {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
+      
+      .checkbox input[type="checkbox"] {
+        opacity: 0;
+        position: absolute;
+      }
+      
+      .checkmark {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #333;
+        margin-right: 10px;
+        position: relative;
+        transition: background-color 0.3s ease;
+      }
+      
+      .checkbox input[type="checkbox"]:checked + .checkmark {
+        background-color: #333;
+      }
+      
+      .checkbox input[type="checkbox"]:checked + .checkmark::after {
+        content: "";
+        display: block;
+        width: 5px;
+        height: 10px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+            
+/*small text box*/
+.form-group {
+    display:flex;
+    margin-bottom: 10px;
+  }
+  
+  label[for="small-textbox"] {
+    
+    font-size: 16px;
+    
+    font-family: 'Times New Roman';
+  }
+  
+  .input-container {
+    position: relative;
+    width: 60px;
+    float: right;
+    margin-left: 62px;
+  }
+
+  .input-container1 {
+    position: relative;
+    width: 60px;
+    float: right;
+    margin-left: 23px;
+  }
+  .input-container2 {
+    position: relative;
+    width: 60px;
+    float: right;
+    margin-left: 76px;
+  }
+  
+  .small-textbox {
+    width: 60px;
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Drop down */
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-toggle {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+  }
+  
+  .dropdown-toggle:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .dropdown-toggle:focus {
+    outline: none;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+
+  /* Menu box */
+
+  .image-box1 {
+    position: relative;
+    width: 320px;
+    height: 250px;
+    background-image: url('/images/bck3.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 14%;
+    margin-top: 20px;
+  }
+  
+  .image-box-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .image-box-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .image-box-content p {
+    font-size: 16px;
+  }
+  .image-box2 {
+    position: relative;
+    width: 320px;
+    height: 250px;
+    background-image: url('/images/bck2.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 14%;
+    margin-top: 20px;
+  }
+  

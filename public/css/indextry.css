@@ -1,0 +1,492 @@
+/* styles.css */
+.hidden {
+    display: none;
+}
+label img {
+    width: 50px; /* Sesuaikan dengan ukuran gambar yang diinginkan */
+    height: 50px;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+}
+
+nav {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    display: flex;
+
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    margin-left: 15px;
+    width: 60px; /* Sesuaikan ukuran sesuai kebutuhan */
+    height: 60px;
+}
+
+.nav-topic {
+    margin: auto;
+    padding: auto;
+}
+.navbar__back-icon {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.nav-tittle {
+    font-size: 20px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+
+    text-align: center;
+}
+
+/* Optional: Add FontAwesome CSS CDN for the back icon */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-family: "cambria";
+}
+
+.radio-button input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.radio-custom {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    margin-right: 10px;
+    position: relative;
+}
+
+.radio-button input[type="radio"]:checked ~ .radio-custom::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Optional: Customize the font style */
+body {
+    background-color: #e9e7e7;
+}
+
+/* radio button sampai sini */
+
+.expln {
+    color: #7d7c7c;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h6 {
+    text-align: center;
+    font-size: 25px;
+    color: #333;
+    font-family: "Marcellus SC", serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn btn-primary {
+    width: 65%;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea,
+    select {
+        font-size: 14px;
+    }
+
+    .btn {
+        background-color: #d2601a;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        width: 100%;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #b55316;
+    }
+}
+
+/* chech box */
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    font-family: "cambria";
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkmark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    margin-right: 10px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: #333;
+}
+
+.checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*small text box*/
+.form-group {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+label[for="small-textbox"] {
+    font-size: 16px;
+
+    font-family: "Times New Roman";
+}
+
+.input-container {
+    position: relative;
+    width: 60px;
+    float: right;
+    margin-left: 62px;
+}
+
+.input-container1 {
+    position: relative;
+    width: 60px;
+    float: right;
+    margin-left: 23px;
+}
+.input-container2 {
+    position: relative;
+    width: 60px;
+    float: right;
+    margin-left: 76px;
+}
+
+.small-textbox {
+    width: 60px;
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Drop down */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-toggle:hover {
+    background-color: #e6e6e6;
+}
+
+.dropdown-toggle:focus {
+    outline: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Menu box */
+
+.image-box1 {
+    position: relative;
+    width: 320px;
+    height: 250px;
+    background-image: url("/images/bck3.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 14%;
+    margin-top: 20px;
+}
+
+.image-box-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.image-box-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.image-box-content p {
+    font-size: 16px;
+}
+.image-box2 {
+    position: relative;
+    width: 320px;
+    height: 250px;
+    background-image: url("/images/bck2.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 14%;
+    margin-top: 20px;
+}
+
+/* result */
+.judul {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    color: #333;
+}
+
+.result-isi {
+    padding: auto;
+    margin-left: 10%;
+}
+
+/* untuk hasil */
+.hasil-perhitungan {
+    /* Gunakan flexbox untuk mengatur tata letak */
+    display: flex;
+    flex-direction: column;
+}
+
+.hasil-perhitungan ul {
+    /* Hilangkan daftar bullet */
+    list-style: none;
+}
+
+.hasil-perhitungan li {
+    /* Gunakan flexbox untuk mengatur posisi key dan value */
+    display: flex;
+    justify-content: space-between; /* Memisahkan key dan value */
+    margin-bottom: 30px; /* Jarak antar item */
+}
+
+.hasil-perhitungan .key {
+    /* Gaya untuk key (calculationKey) */
+    flex-basis: 50%; /* Lebar key */
+}
+
+.hasil-perhitungan .value {
+    /* Gaya untuk value (calculationValue) */
+    flex-basis: 50%; /* Lebar value */
+    text-align: right; /* Geser ke kanan */
+    font-style: italic;
+    text-align: left;
+    margin-left: 150px;
+}
+
+/* untuk hasil total assest */
+.hasil-perhitungan-harta {
+    /* Gunakan flexbox untuk mengatur tata letak */
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(201, 205, 205);
+}
+
+.hasil-perhitungan-harta ul {
+    /* Hilangkan daftar bullet */
+    list-style: none;
+}
+
+.hasil-perhitungan-harta li {
+    /* Gunakan flexbox untuk mengatur posisi key dan value */
+    display: flex;
+    justify-content: space-between; /* Memisahkan key dan value */
+    margin-bottom: 30px; /* Jarak antar item */
+}
+
+.hasil-perhitungan-harta .key {
+    /* Gaya untuk key (calculationKey) */
+    flex-basis: 50%; /* Lebar key */
+}
+
+.hasil-perhitungan-harta .value {
+    /* Gaya untuk value (calculationValue) */
+    flex-basis: 50%; /* Lebar value */
+    text-align: right; /* Geser ke kanan */
+    font-style: italic;
+    text-align: left;
+    margin-left: 150px;
+}
+
+/* Button */
+
+.button {
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 50px;
+}
+
+.print-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Efek hover pada tombol */
+.print-button:hover {
+    background-color: #005f75;
+}
+
+.newhitung-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a520;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Efek hover pada tombol */
+.newhitung-button:hover {
+    background-color: #037e05;
+}
+
+.regulation {
+    font-style: italic;
+    text-align: center;
+}
+
+.click-r {
+    font-style: oblique;
+    color: #008cba;
+}
