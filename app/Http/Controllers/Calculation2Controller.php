@@ -25,8 +25,13 @@ class Calculation2Controller extends Controller
         $totaldaughter = (int) $request->input('jumlahdaughter1',0);
         $totalson2 = (int) $request->input('jumlahson',0);
         $totaldaughter2 = (int) $request->input('jumlahdaughter',0);
+        $totalbrother = (int) $request->input('jumlahbrother1',0);
+        $totalsister = (int) $request->input('jumlahsister1',0);
+        $totalbrother2 = (int) $request->input('jumlahbrother2',0);
+        $totalsister2 = (int) $request->input('jumlahsister2',0);
         $type = $request->input('type');
         $month = $request->input('bulan');
+
 
 
         //dd($totalson, $totaldaughter);
@@ -42,6 +47,19 @@ class Calculation2Controller extends Controller
             // Menggunakan perbandingan 2:1
             $totalRasio2 = $totalson2 * 2 + $totaldaughter2;
         }
+
+
+        // for saudara
+        if ($totalbrother > 0 && $totalsister > 0) {
+            // Menggunakan perbandingan 2:1
+            $totalRasio3 = $totalbrother * 2 + $totalsister;
+        }
+
+        if ($totalbrother2 > 0 && $totalsister2 > 0) {
+            // Menggunakan perbandingan 2:1
+            $totalRasio4 = $totalbrother2 * 2 + $totalsister2;
+        }
+       
         
 
         $bagianAnakLaki = 0;
@@ -304,8 +322,8 @@ class Calculation2Controller extends Controller
                                     break;
                             
                                 case ($saudaraperempuan && $saudaralaki):
-                                    $bagianSaudaraLaki = round($totalWarisan * (2/3),2);
-                                    $bagianSaudaraPerempuan = round($totalWarisan * (1/3),2);
+                                    $bagianSaudaraLaki = round(($totalWarisan * 2) / $totalRasio3 * $totalsister ,2);
+                                    $bagianSaudaraPerempuan = round(($totalWarisan * 1) / $totalRasio3 * $totalsister ,2);
                                     break;
                             
                                 case ($saudaraperempuan && $anaklaki):
@@ -882,8 +900,8 @@ class Calculation2Controller extends Controller
                                         break;
                                 
                                     case ($saudaraperempuan3 && $saudaralaki3):
-                                        $bagianSaudaraLaki = round($totalWarisan * (2/3),2);
-                                        $bagianSaudaraPerempuan = round($totalWarisan * (1/3),2);
+                                        $bagianSaudaraLaki3 = round(($totalWarisan * 2) / $totalRasio4 * $totalsister2 ,2);
+                                    $bagianSaudaraPerempuan3 = round(($totalWarisan * 1) / $totalRasio4 * $totalsister2 ,2);
                                         break;
                                 
                                     case ($saudaraperempuan3 && $anaklaki3):
@@ -1327,6 +1345,18 @@ class Calculation2Controller extends Controller
 
     ];
 
+    $totalSibling = [
+        'Total Brother' => $totalbrother,
+        'Total Sister' => $totalsister,
+
+    ];
+
+    $totalSibling2 = [
+        'Total Brother' => $totalbrother2,
+        'Total Sister' => $totalsister2,
+
+    ];
+
 
     return view('calculate.procal.hasil')->with([
         'selectedData' => $selectedOptions,
@@ -1335,6 +1365,8 @@ class Calculation2Controller extends Controller
         'totalHarta' => $totalHarta,
         'totalChild' => $totalChild,
         'totalChild2' => $totalChild2,
+        'totalSibling' => $totalSibling,
+        'totalSibling2' => $totalSibling2,
     ]);
 
 
