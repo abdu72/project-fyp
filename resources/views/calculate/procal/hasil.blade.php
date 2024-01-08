@@ -81,6 +81,34 @@
                 </ul>
             </div>
 
+            <div class="hasil-perhitungan">
+
+                <ul>
+                    @foreach($totalSibling as $calculationKey2 => $calculationValue2)
+                    @if($calculationValue2 !== 0)
+                    <li>
+                        <span class="key"><b>{{ $calculationKey2 }}</b></span>
+                        <span class="value"><b>{{ $calculationValue2 }}</b></span>
+                    </li>
+                    @endif
+                    @endforeach
+                </ul>
+            </div>
+
+            <div class="hasil-perhitungan">
+
+                <ul>
+                    @foreach($totalSibling2 as $calculationKey2 => $calculationValue2)
+                    @if($calculationValue2 !== 0)
+                    <li>
+                        <span class="key"><b>{{ $calculationKey2 }}</b></span>
+                        <span class="value"><b>{{ $calculationValue2 }}</b></span>
+                    </li>
+                    @endif
+                    @endforeach
+                </ul>
+            </div>
+
             <hr>
             <!-- Tampilkan tabel dengan hasil perhitungan -->
             <div class="hasil-perhitungan">
