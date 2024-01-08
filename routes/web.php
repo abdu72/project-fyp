@@ -98,7 +98,7 @@ Route::post('/registeruser', [RegisterController::class, 'registeruser']);
 
 
 //Route::middleware(['auth.once'])->post('/simpan-hasil-perhitungan', [HasilPerhitunganController::class, 'simpanHasilPerhitungan'])->name('hasil-perhitungan');
-Route::middleware(['auth.once'])->post('/simpan-hasil-perhitungan', [HasilPerhitunganController::class, 'simpanHasilPerhitungan'])->name('simpan.hasil.perhitungan');
+//Route::middleware(['auth.once'])->post('/simpan-hasil-perhitungan', [HasilPerhitunganController::class, 'simpanHasilPerhitungan'])->name('simpan.hasil.perhitungan');
 //Route::post('/simpan-hasil-perhitungan', [HasilPerhitunganController::class, 'simpanHasilPerhitungan'])->name('hasil-perhitungan');
 
 Route::get('/hasil-perhitungan', function () {
