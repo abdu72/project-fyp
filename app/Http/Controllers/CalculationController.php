@@ -24,6 +24,13 @@ class CalculationController extends Controller
         $totaldaughter = (int) $request->input('jumlahdaughter1',0);
         $totalson2 = (int) $request->input('jumlahson',0);
         $totaldaughter2 = (int) $request->input('jumlahdaughter',0);
+        $totalbrother = (int) $request->input('jumlahbrother1',0);
+        $totalsister = (int) $request->input('jumlahsister1',0);
+        $totalbrother2 = (int) $request->input('jumlahbrother2',0);
+        $totalsister2 = (int) $request->input('jumlahsister2',0);
+        $type = $request->input('type');
+        $month = $request->input('bulan');
+
 
 
         //dd($totalson, $totaldaughter);
@@ -38,6 +45,18 @@ class CalculationController extends Controller
         if ($totalson2 > 0 && $totaldaughter2 > 0) {
             // Menggunakan perbandingan 2:1
             $totalRasio2 = $totalson2 * 2 + $totaldaughter2;
+        }
+
+
+        // for saudara
+        if ($totalbrother > 0 && $totalsister > 0) {
+            // Menggunakan perbandingan 2:1
+            $totalRasio3 = $totalbrother * 2 + $totalsister;
+        }
+
+        if ($totalbrother2 > 0 && $totalsister2 > 0) {
+            // Menggunakan perbandingan 2:1
+            $totalRasio4 = $totalbrother2 * 2 + $totalsister2;
         }
         
 
@@ -306,8 +325,8 @@ class CalculationController extends Controller
                                     break;
                             
                                 case ($saudaraperempuan && $anaklaki):
-                                    $bagianAnakLaki = $totalWarisan * (1/1);
-                                    $bagianSaudaraPerempuan = $totalWarisan * (0);
+                                    $bagianSaudaraLaki = round(($totalWarisan * 2) / $totalRasio3 * $totalsister ,2);
+                                    $bagianSaudaraPerempuan = round(($totalWarisan * 1) / $totalRasio3 * $totalsister ,2);
                                     break;
                             
                                 case ($ibu && $anaklaki):
@@ -879,9 +898,9 @@ class CalculationController extends Controller
                                         break;
                                 
                                     case ($saudaraperempuan3 && $saudaralaki3):
-                                        $bagianSaudaraLaki = round($totalWarisan * (2/3),2);
-                                        $bagianSaudaraPerempuan = round($totalWarisan * (1/3),2);
-                                        break;
+                                        $bagianSaudaraLaki3 = round(($totalWarisan * 2) / $totalRasio4 * $totalsister2 ,2);
+                                    $bagianSaudaraPerempuan3 = round(($totalWarisan * 1) / $totalRasio4 * $totalsister2 ,2);
+                                    break;
                                 
                                     case ($saudaraperempuan3 && $anaklaki3):
                                         $bagianAnakLaki3 = $totalWarisan * (1/1);
@@ -1197,14 +1216,13 @@ class CalculationController extends Controller
             //dd($request->all());
 
         
-            return view('hasil-hitung')->with([
-                'selectedData' => $request->only('harta','anaklaki', 'anakperempuan', 'istri', 'ibu', 'bapak', 'saudaralaki', 
-                'saudaraperempuan', 'kakek', 'nenek', 'bapak2', 'ibu2', 'saudaraperempuan2', 'saudaralaki2', 
-                'suami', 'ibu3', 'bapak3', 'saudaralaki3', 'saudaraperempuan3', 'anaklaki3', 'anakperempuan3', 
-                'ibu4', 'bapak4', 'saudaralaki4', 'saudaraperempuan4'),
-                
-                'hasilPerhitungan' => [
-                    'Mother (From married man)' => $bagianIbu,
+            $selectedOptions = $request->only('harta','anaklaki', 'anakperempuan', 'istri', 'ibu', 'bapak', 'saudaralaki', 
+            'saudaraperempuan', 'kakek', 'nenek', 'bapak2', 'ibu2', 'saudaraperempuan2', 'saudaralaki2', 
+            'suami', 'ibu3', 'bapak3', 'saudaralaki3', 'saudaraperempuan3', 'anaklaki3', 'anakperempuan3', 
+            'ibu4', 'bapak4', 'saudaralaki4', 'saudaraperempuan4');
+
+    $hasilPerhitungan = [
+        'Mother (From married man)' => $bagianIbu,
                     'Son (From married man)' => $bagianAnakLaki,
                     'Daughter (From married man)' => $bagianAnakPerempuan,
                     'Wife (From male)' => $bagianIstri,
@@ -1227,36 +1245,54 @@ class CalculationController extends Controller
                     'Son (From married woman)' => $bagianAnakLaki3,
                     'Daughter (From married woman)' => $bagianAnakPerempuan3,
                     'Husband' => $bagiansuami,
-                
-                    // tambahkan hasil perhitungan lainnya di sini
-                ],
-                'selectedDataf' => $request->only('jenisKelamin','status'),
-                'hasilData' => [
-                    'Gender' => $jenisKelamin,
-                    'Status' => $status,
-                ],
-    
-                'selectedDataf' => $request->only('jenisKelamin','status'),
-                'totalHarta' => [
-                    'Total assets' => $totalWarisan,
-                ],
-                // ... tambahkan variabel lainnya yang ingin Anda kirimkan
+        // ... tambahkan opsi lainnya
+    ];
 
-                'selectedDataf' => $request->only('totalson','totaldaughter'),
-                'totalChild' => [
-                    'Total Son' => $totalson,
-                    'Total Daughter' => $totaldaughter,
+    $hasilData = [
+        'Gender' => $jenisKelamin,
+        'Status' => $status,
+    ];
 
-                ],
+    $totalHarta = [
+        'Total assets' => $totalWarisan,
+    ];
 
-                'selectedDataf' => $request->only('totalson2','totaldaughter2'),
-                'totalChild2' => [
-                    'Total Son' => $totalson2,
-                    'Total Daughter' => $totaldaughter2,
 
-                ],
-                // ... tambahkan variabel lainnya yang ingin Anda kirimkan
-            ]);
+    $totalChild = [
+        'Total Son' => $totalson,
+        'Total Daughter' => $totaldaughter,
+
+    ];
+
+    $totalChild2 = [
+        'Total Son' => $totalson2,
+        'Total Daughter' => $totaldaughter2,
+
+    ];
+
+    $totalSibling = [
+        'Total Brother' => $totalbrother,
+        'Total Sister' => $totalsister,
+
+    ];
+
+    $totalSibling2 = [
+        'Total Brother' => $totalbrother2,
+        'Total Sister' => $totalsister2,
+
+    ];
+
+
+    return view('hasil-hitung')->with([
+        'selectedData' => $selectedOptions,
+        'hasilPerhitungan' => $hasilPerhitungan,
+        'hasilData' => $hasilData,
+        'totalHarta' => $totalHarta,
+        'totalChild' => $totalChild,
+        'totalChild2' => $totalChild2,
+        'totalSibling' => $totalSibling,
+        'totalSibling2' => $totalSibling2,
+    ]);
         }
         
     
